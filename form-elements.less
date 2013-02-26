@@ -1,0 +1,47 @@
+@highlight: #52aeff;
+@required: #ff0007;
+@button: #00ad34;
+@import "mixins";
+html{
+	background: #f8f8f8;
+}
+
+form {
+	label, input, textarea, button {
+		outline: none;
+		display: block; /*DELETE and position elements as needed*/
+	}
+	label {
+		.required {color: @required;}
+	}
+	input, textarea {
+		width: 100%;
+		padding: 10px;
+		.box-sizing;
+		.border-radius(0px);
+		
+		border: 1px solid fade(#000, 25%);
+		
+		//.gradient(light, #fbfbfb);
+		background: #fefefe;
+		color: #222;
+		background-clip: padding-box;
+
+		.transition;
+		
+		&:focus {
+			border-color: @highlight;
+			.box-shadow(0px, 0px, 5px, @highlight);
+			background: #fff;
+		}		
+	}
+	input {}
+	textarea {
+		height: 200px;
+		resize: none;
+	}
+	button {
+		margin: 20px 0;					
+		.button(@button);
+	}
+}
